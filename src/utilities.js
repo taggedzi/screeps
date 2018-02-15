@@ -144,7 +144,7 @@ var recharge = exports.recharge = function (creep) {
 
   if (status == ERR_NOT_IN_RANGE) {
     if (creep.memory.recharging && creep.carry.energy) {
-      creep.dropEnergy();
+      creep.drop(RESOURCE_ENERGY);
     }
 
     creep.moveTo(spawn, globalMoveToOptions);
