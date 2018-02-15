@@ -60,7 +60,7 @@ function pickupDroppedEnergy(creep) {
     return;
   }
 
-  var energy = creep.pos.findInRange(FIND_DROPPED_ENERGY, 1);
+  var energy = creep.pos.findInRange(FIND_DROPPED_RESOURCES, 1);
 
   if (energy.length) {
     creep.pickup(energy[0]);
