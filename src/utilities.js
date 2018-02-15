@@ -137,7 +137,8 @@ var rechargeCount = exports.rechargeCount = function (room) {
 var recharge = exports.recharge = function (creep) {
   var spawn = Game.spawns.Spawn1;
 
-  creep.transferEnergy(spawn);
+  //creep.transferEnergy(spawn);
+  creep.transfer(spawn, RESOURCE_ENERGY)
 
   var status = spawn.renewCreep(creep);
 
@@ -178,7 +179,7 @@ var transferToOrMove = exports.transferToOrMove = function (creep, target, optio
     options = {move: true};
   }
 
-  if (creep.transferEnergy(target) == ERR_NOT_IN_RANGE) {
+  if (creep.transfer(target, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
     if (options.move) {
       creep.moveTo(target, globalMoveToOptions);
     }
